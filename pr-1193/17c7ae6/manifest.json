@@ -1,0 +1,66 @@
+{
+  "summary": "网关页的「网关密钥」区块不再跟随局域网共享开关隐藏（空列表改用应用统一的空状态样式），设置 → 网络与共享在共享开关旁新增「网关密钥」入口，并在缺少可用密钥时把引导文案就地显示在开关旁（含中/日/德翻译），不再只走状态栏报错；开关共享本身不再新建或轮换密钥，只有密钥库为空时开启共享才会生成首个密钥。",
+  "scenes": [
+    {
+      "title": "网关密钥区块不再随共享隐藏",
+      "shots": [
+        {
+          "file": "01-gateway-keys-while-sharing-off.png",
+          "caption": "未开启局域网共享的网关页",
+          "width": 2560
+        },
+        {
+          "file": "02-gateway-keys-empty.png",
+          "caption": "共享关闭时仍显示的「网关密钥」区块与空列表",
+          "width": 2496
+        }
+      ]
+    },
+    {
+      "title": "开启共享与密钥管理入口",
+      "shots": [
+        {
+          "file": "03-settings-network-sharing.png",
+          "caption": "共享开关与其旁的「网关密钥」入口",
+          "width": 2496
+        },
+        {
+          "file": "04-settings-sharing-on.png",
+          "caption": "打开共享后的「网络与共享」",
+          "width": 2496
+        },
+        {
+          "file": "05-gateway-keys-after-toggles.png",
+          "caption": "多次开关共享后的「网关密钥」区块",
+          "width": 2496
+        }
+      ]
+    },
+    {
+      "title": "缺少可用密钥时的引导",
+      "shots": [
+        {
+          "file": "06-gateway-key-disabled.png",
+          "caption": "停用后的网关密钥列表",
+          "width": 2496
+        },
+        {
+          "file": "07-sharing-needs-enabled-key.png",
+          "caption": "点「开启」后共享开关旁显示的内容",
+          "width": 2496
+        }
+      ]
+    }
+  ],
+  "video": "preview.mp4",
+  "poster": "poster.png",
+  "errors": [
+    "缺少可用密钥时的引导 · click #gatewayKeys button: nothing visible matches #gatewayKeys button with \"停用密钥\" (0 in the page)"
+  ],
+  "leak": false,
+  "skipped": null,
+  "mismatch": "",
+  "unseen": "沙盒的网关密钥库是空的，因此「已有密钥但全部停用或凭据为空，开启共享被拒绝」的初始场景看不到，只能先把刚创建的密钥停用来复现引导；界面只显示密钥掩码，凭据与 ID 在开关共享前后是否真的没变无法从画面上直接比较。MAGPIE_ADDR 保留、远程与转发调用仍需有效网关密钥、旧凭据不再复活等属于后端行为，界面里看不到。",
+  "interactive": true,
+  "pages": 4
+}

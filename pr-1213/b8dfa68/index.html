@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>#1213 界面预览 · b8dfa68</title>
+<style>:root{color-scheme:light dark;--bg:#f6f6f7;--fg:#1d1d1f;--muted:#6e6e73;--card:#fff;--line:#e5e5ea}
+@media (prefers-color-scheme:dark){:root{--bg:#111113;--fg:#f2f2f4;--muted:#9a9aa0;--card:#1c1c1f;--line:#2c2c30}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:28px 16px 60px}h1{font-size:20px;margin:0 0 4px}.m{color:var(--muted);font-size:13px;margin:0 0 20px}
+video,img{display:block;width:100%;border-radius:10px;border:1px solid var(--line);background:var(--card)}figure{margin:0 0 28px}figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+a{color:inherit}</style>
+<main><h1>#1213 界面预览</h1><p class="m">commit b8dfa68 · <a href="https://github.com/yetone/magpie/pull/1213">回到 PR</a> · app.js 现在把「按在页面滚动条上（pointerdown 落在 .view 的滚动条带内）到松手」这段期间的 scroll 当作读者发起的：拖动不再被 backToReader 逐帧拉回，同时放开点击后的 held 保持与 pinSizes 的锚定回拉；routing.js 的 steady() 通过 window.readerScrolling() 在读者正在滚动时不再把 scrollTop 写回。用户可见的结果是用鼠标拖动页面右侧滚动条（以及先点页面再拖）能让页面停在拖到的位置。</p>
+<figure><video src="preview.mp4" controls autoplay muted playsinline poster="poster.png"></video><figcaption>红线是鼠标走过的轨迹，红色圆环是一次点击；底部文字是这一步在做什么。空格暂停，← → 逐段查看。</figcaption></figure>
+<figure><img src="01-gateway-models-top.png" alt="网关页顶部，模型列表从 group/coding 开始"><figcaption>网关长列表：页面停在滚动到的位置 · 网关页顶部，模型列表从 group/coding 开始</figcaption></figure>
+<figure><img src="02-gateway-models-mid.png" alt="向下滚动之后看到的列表位置"><figcaption>网关长列表：页面停在滚动到的位置 · 向下滚动之后看到的列表位置</figcaption></figure>
+<figure><img src="03-gateway-activity.png" alt="「最近调用」一节处页面的位置"><figcaption>网关长列表：页面停在滚动到的位置 · 「最近调用」一节处页面的位置</figcaption></figure>
+<figure><img src="04-routing-top.png" alt="路由页顶部：网关正在做的实时决定"><figcaption>路由页：实时重绘时的滚动位置 · 路由页顶部：网关正在做的实时决定</figcaption></figure>
+<figure><img src="05-routing-groups.png" alt="页面实时重绘之后所在的位置"><figcaption>路由页：实时重绘时的滚动位置 · 页面实时重绘之后所在的位置</figcaption></figure>
+</main></html>

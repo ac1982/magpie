@@ -1,0 +1,49 @@
+{
+  "summary": "app.js 现在把「按在页面滚动条上（pointerdown 落在 .view 的滚动条带内）到松手」这段期间的 scroll 当作读者发起的：拖动不再被 backToReader 逐帧拉回，同时放开点击后的 held 保持与 pinSizes 的锚定回拉；routing.js 的 steady() 通过 window.readerScrolling() 在读者正在滚动时不再把 scrollTop 写回。用户可见的结果是用鼠标拖动页面右侧滚动条（以及先点页面再拖）能让页面停在拖到的位置。",
+  "scenes": [
+    {
+      "title": "网关长列表：页面停在滚动到的位置",
+      "shots": [
+        {
+          "file": "01-gateway-models-top.png",
+          "caption": "网关页顶部，模型列表从 group/coding 开始",
+          "width": 2560
+        },
+        {
+          "file": "02-gateway-models-mid.png",
+          "caption": "向下滚动之后看到的列表位置",
+          "width": 2560
+        },
+        {
+          "file": "03-gateway-activity.png",
+          "caption": "「最近调用」一节处页面的位置",
+          "width": 2560
+        }
+      ]
+    },
+    {
+      "title": "路由页：实时重绘时的滚动位置",
+      "shots": [
+        {
+          "file": "04-routing-top.png",
+          "caption": "路由页顶部：网关正在做的实时决定",
+          "width": 2560
+        },
+        {
+          "file": "05-routing-groups.png",
+          "caption": "页面实时重绘之后所在的位置",
+          "width": 2560
+        }
+      ]
+    }
+  ],
+  "video": "preview.mp4",
+  "poster": "poster.png",
+  "errors": [],
+  "leak": false,
+  "skipped": null,
+  "mismatch": "",
+  "unseen": "录制脚本只有滚轮式的滚动动作，无法真的用鼠标按住并拖动页面右侧的滚动条，也无法复现「点击页面之后再拖滚动条」这一手势（描述里第 1、4 条正是为这两种情形改的）；因此画面只能给出改动生效的两类页面（网关的长模型列表、会实时重绘的路由页）以及滚动后页面停留的位置，拖动滚动条本身是否被修好要由 PR 里新增的 view-scrollbar-drag.test.cjs 判断。另外描述里提到的「Routing 页在 WebKit 上仍拖不动」和「只在 Windows 上验证过」属于引擎/平台差异，在浏览器沙盒里无法呈现。",
+  "interactive": true,
+  "pages": 2
+}

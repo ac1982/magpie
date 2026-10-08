@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>#1193 界面预览 · 17c7ae6</title>
+<style>:root{color-scheme:light dark;--bg:#f6f6f7;--fg:#1d1d1f;--muted:#6e6e73;--card:#fff;--line:#e5e5ea}
+@media (prefers-color-scheme:dark){:root{--bg:#111113;--fg:#f2f2f4;--muted:#9a9aa0;--card:#1c1c1f;--line:#2c2c30}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:28px 16px 60px}h1{font-size:20px;margin:0 0 4px}.m{color:var(--muted);font-size:13px;margin:0 0 20px}
+video,img{display:block;width:100%;border-radius:10px;border:1px solid var(--line);background:var(--card)}figure{margin:0 0 28px}figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+a{color:inherit}</style>
+<main><h1>#1193 界面预览</h1><p class="m">commit 17c7ae6 · <a href="https://github.com/yetone/magpie/pull/1193">回到 PR</a> · 网关页的「网关密钥」区块不再跟随局域网共享开关隐藏（空列表改用应用统一的空状态样式），设置 → 网络与共享在共享开关旁新增「网关密钥」入口，并在缺少可用密钥时把引导文案就地显示在开关旁（含中/日/德翻译），不再只走状态栏报错；开关共享本身不再新建或轮换密钥，只有密钥库为空时开启共享才会生成首个密钥。</p>
+<figure><video src="preview.mp4" controls autoplay muted playsinline poster="poster.png"></video><figcaption>红线是鼠标走过的轨迹，红色圆环是一次点击；底部文字是这一步在做什么。空格暂停，← → 逐段查看。</figcaption></figure>
+<figure><img src="01-gateway-keys-while-sharing-off.png" alt="未开启局域网共享的网关页"><figcaption>网关密钥区块不再随共享隐藏 · 未开启局域网共享的网关页</figcaption></figure>
+<figure><img src="02-gateway-keys-empty.png" alt="共享关闭时仍显示的「网关密钥」区块与空列表"><figcaption>网关密钥区块不再随共享隐藏 · 共享关闭时仍显示的「网关密钥」区块与空列表</figcaption></figure>
+<figure><img src="03-settings-network-sharing.png" alt="共享开关与其旁的「网关密钥」入口"><figcaption>开启共享与密钥管理入口 · 共享开关与其旁的「网关密钥」入口</figcaption></figure>
+<figure><img src="04-settings-sharing-on.png" alt="打开共享后的「网络与共享」"><figcaption>开启共享与密钥管理入口 · 打开共享后的「网络与共享」</figcaption></figure>
+<figure><img src="05-gateway-keys-after-toggles.png" alt="多次开关共享后的「网关密钥」区块"><figcaption>开启共享与密钥管理入口 · 多次开关共享后的「网关密钥」区块</figcaption></figure>
+<figure><img src="06-gateway-key-disabled.png" alt="停用后的网关密钥列表"><figcaption>缺少可用密钥时的引导 · 停用后的网关密钥列表</figcaption></figure>
+<figure><img src="07-sharing-needs-enabled-key.png" alt="点「开启」后共享开关旁显示的内容"><figcaption>缺少可用密钥时的引导 · 点「开启」后共享开关旁显示的内容</figcaption></figure>
+</main></html>
